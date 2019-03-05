@@ -1,0 +1,32 @@
+Settings: {
+     node: A1,
+},
+DHT22: {
+     temperatura: 22,
+     humedad: 33,
+ },
+BMP180: {
+     press: 1010.39, 
+     temperatura: 33,
+},
+GY-87: {
+     X: 16,
+     Y: -35,
+     Z: -50,
+},
+ACELE: {
+     X: 420,
+     Y: 240,
+     Z: 16440,
+},
+GYRO: {
+     X: 15,
+     Y: -22,
+     Z: -50,
+},
+GPS: {
+     latitude: 22.1466241,
+     longitude: -102.2756558,
+     altitude: 26,
+     speed_kph: 9660,
+},
