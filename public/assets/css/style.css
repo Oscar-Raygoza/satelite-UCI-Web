@@ -41,11 +41,11 @@ article
 
 .menu-fixed{
 	margin: 0;
-	position: fixed;
+	position: relative;
 	width: 100%;
 	height: 110px;
 	background-color: #000;
-	z-index: 2;
+	z-index: 6;
 }.menu-tags{
 	color: rgb(49,49,54);
 }.menu-links{
@@ -94,9 +94,10 @@ article
     #map{
         height: 100%;
     }
-	#columna2
+	#column
 	{
-	background-color: #D1D1D1;
+	
+	background-color: #000;
 	width: 50%;
 	}
 	#columna3
@@ -105,6 +106,12 @@ article
 	width: 50%;
 	}
 
+	.title-card-column{
+		color: #f2f2f2;
+		width: 100%;
+		height: 40px;
+		background-color: #000;
+	}
 @media screen and (max-width: 960px){
 
 	#wrapper

@@ -1,53 +1,55 @@
 <!DOCTYPE html>
-<html>
-    <head>
-         <meta charset="utf-8">
-         <title>SateliteUCI</title>
-         <link href="/assets/css/style.css" type="text/css" rel="stylesheet">
-         <meta name="viewport" content="width=device-width,user-scalable=no">
-    </head>
-    <body class="cuerpo">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>SateliteUCI</title>
+</head>
+<body>
+    <h1 id="celsius"></h1>
+    <br>
+    <h1 id="humedad"></h1>
+    <br>
+    <h1 id="press"></h1>
+    <h3>Mag</h3>
+    <h1 id="mx"></h1>
+    <br>
+    <h1 id="my"></h1>
+    <br>
+    <h1 id="mz"></h1>
+    <h3>Giroscopio</h3>
+    <h1 id="gx"></h1>
+    <br>
+    <h1 id="gy"></h1>
+    <br>
+    <h1 id="gz"></h1>
+    <h3>Acelerometro</h3>
+    <h1 id="ax"></h1>
+    <br>
+    <h1 id="ay"></h1>
+    <br>
+    <h1 id="az"></h1>
+    <h3>Location</h3>
+    <h1 id="lat"></h1>
+    <br>
+    <h1 id="lon"></h1>
+    <br>
+    <h1 id="alt"></h1>
+    <br>
+    <h1 id="vel"></h1>
 
-      <header>
-        <div id="menu-fixed" class="menu-fixed">
-          <div class="menu-tags">
-              <img class="menu-links logo-nav" src="/assets/img/logo-uci.png" alt="">
-              <img class="menu-links logo-nav" id="logo-nav-electronic" src="/assets/img/ElectronicCats.png" alt="">
-  
-
-
-
-              <a class="menu-links" id="btnLogin" href="index.html">Home</a>
-              <a class="menu-links" id="btnLogin" href="about.html">About</a>
-              <a class="menu-links" id="btnLogin" href="documentation.html">Documentation</a>
-   
-          </div>
-        </div>
-      </header>
-
-      <div id="wrapper">
-        <section>
-          <article id="banner">
-            <div id="map">
-
-            </div>
-          </article>
-          <article id="columna2"></article>
-          <article id="columna3"></article>
-        </section>
-
-        <footer></footer>
-      </div>
-      <script>
-        var map;
-        function initMap() {
-          map = new google.maps.Map(document.getElementById('map'), {
-            center: {lat: -34.397, lng: 150.644},
-            zoom: 8
-          });
-        }
-      </script>
-      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzN371-QG85nBDi_Eb302o3yGmPdwBbjA&callback=initMap"
-      async defer></script>
-    </body>
+    <h3>CCS811</h3>
+    <h1 id="co2"></h1>
+    <br>
+    <h1 id="tvoc"></h1>
+    <br>
+    <h3>Señal</h3>
+    <h1 id="RSSI"></h1>
+    <br>
+    
+    <script src="/socket.io/socket.io.js" charset="utf-8"></script>
+    <script src="/main.js" charset="utf-8"></script>
+</body>
 </html>

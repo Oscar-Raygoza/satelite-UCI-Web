@@ -1,6 +1,4 @@
-
-
-sockets.on('data', function(data){
+   sockets.on('data', function(data){
     var obj = JSON.parse(data);
     document.getElementById("celsius").innerHTML = obj.Sensores[0][5] + "ºC";
     document.getElementById("humedad").innerHTML = obj.Sensores[0][3] + "% Humedad";
@@ -25,10 +23,7 @@ sockets.on('data', function(data){
 
     document.getElementById("co2").innerHTML = obj.Sensores[0][19] + " CO2";
     document.getElementById("tvoc").innerHTML = obj.Sensores[0][20] + " TVOC";
-
     document.getElementById("RSSI").innerHTML = obj.Sensores[0][21] + " Señal";
-    
-    
 
     console.log(obj);
 })
