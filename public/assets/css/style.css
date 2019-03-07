@@ -4,85 +4,11 @@
 }
 
 body{
-	background: rgb(44,49,54);
 	font-size: 1.6rem;
-  	font-family: "Open Sans", sans-serif;
+	  font-family: "Open Sans", sans-serif;
+	  background-color: #f2f2f2;
 }
 
-
-
-#wrapper{
-	width: 1300px;
-	margin: 0 auto;
-}
-
-
-
-header{
-	margin: 0 auto;
-	height: 111px;
-	text-align: center;
-	background-color: #1784c7;
-	color:white;
-}
-
-
-article
-{
-	box-sizing: border-box;
-	float:left;
-	height: 100%;
-	background-color: grey;
-	padding: 2%;
-	text-align: center;
-	height: 400px;
-}
-
-
-.menu-fixed{
-	margin: 0;
-	position: relative;
-	width: 100%;
-	height: 110px;
-	background-color: #000;
-	z-index: 6;
-}.menu-tags{
-	color: rgb(49,49,54);
-}.menu-links{
-	margin-top: 20px;
-	display: block;
-	float: left;
-	color:#f2f2f2;
-	text-decoration: none;
-	font-size: 16px;
-	margin-left: 12px;
-	padding: 5px 25px 5px 25px; 
-	box-shadow: 2px 0 #1784c7;
-	border-bottom-left-radius: 15px;
-	
-}.menu-links:hover{
-	animation: 1s animation-color alternate; 
-	background-color: #1784c7;
-}
-
-.logo-nav{
-	width: 40px;
-	height: auto;
-}
-#logo-nav-electronic{
-    width: 70px;
-	height: auto;
-}
-#logo-nav-utna{
-    width: 130px;
-	height: auto;
-
-}
-
-#left-nav{
-	float: right;
-	margin-right: 30px;
-}
 
 	#banner
 	{

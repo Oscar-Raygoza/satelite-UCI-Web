@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <meta charset="utf-8">
+         <title>SateliteUCI</title>
+         <link href="/assets/css/style.css" type="text/css" rel="stylesheet">
+         <link rel="stylesheet" href="/assets/libs/morris.css">
+         <meta name="viewport" content="width=device-width,user-scalable=no">
+         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+         integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+         crossorigin=""/>
+    </head>
+    <body class="cuerpo">
+      <header>
+        <div id="menu-fixed" class="menu-fixed">
+          <div class="menu-tags">
+              <img class="menu-links logo-nav" src="/assets/img/logo-uci.png" alt="">
+              <img class="menu-links logo-nav" id="logo-nav-electronic" src="/assets/img/ElectronicCats.png" alt="">
+
+              <a class="menu-links" id="btnLogin" href="index.html">Home</a>
+              <a class="menu-links" id="btnLogin" href="about.html">About</a>
+              <a class="menu-links" id="btnLogin" href="documentation.html">Documentation</a>
+   
+          </div>
+        </div>
+      </header>
+
+      <div id="wrapper">
+        <section>
+          <article id="banner">
+                        <div id="mapid" style="width: 100%; height: 500px; position: relative;" class="leaflet-container leaflet-touch leaflet-retina leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" tabindex="0"><div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(0px, 0px, 0px);"><div class="leaflet-pane leaflet-tile-pane"><div class="leaflet-layer " style="z-index: 1; opacity: 1;"><div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 18; transform: translate3d(0px, 0px, 0px) scale(1);"><img alt="" role="presentation" src="./Quick Start - Leaflet_files/2723.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(56px, -91px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Quick Start - Leaflet_files/2723(1).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(312px, -91px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Quick Start - Leaflet_files/2724.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(56px, 165px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Quick Start - Leaflet_files/2724(1).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(312px, 165px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Quick Start - Leaflet_files/2723(2).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-200px, -91px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Quick Start - Leaflet_files/2723(3).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(568px, -91px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Quick Start - Leaflet_files/2724(2).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-200px, 165px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Quick Start - Leaflet_files/2724(3).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(568px, 165px, 0px); opacity: 1;"></div></div></div><div class="leaflet-pane leaflet-shadow-pane"></div><div class="leaflet-pane leaflet-overlay-pane"></div><div class="leaflet-pane leaflet-marker-pane"></div><div class="leaflet-pane leaflet-tooltip-pane"></div><div class="leaflet-pane leaflet-popup-pane"></div><div class="leaflet-proxy leaflet-zoom-animated" style="transform: translate3d(1.04805e+06px, 697379px, 0px) scale(4096);"></div></div><div class="leaflet-control-container"><div class="leaflet-top leaflet-left"><div class="leaflet-control-zoom leaflet-bar leaflet-control"><a class="leaflet-control-zoom-in" href="https://leafletjs.com/examples/quick-start/example-basic.html#" title="Zoom in" role="button" aria-label="Zoom in">+</a><a class="leaflet-control-zoom-out" href="https://leafletjs.com/examples/quick-start/example-basic.html#" title="Zoom out" role="button" aria-label="Zoom out">−</a></div></div><div class="leaflet-top leaflet-right"></div><div class="leaflet-bottom leaflet-left"></div><div class="leaflet-bottom leaflet-right"><div class="leaflet-control-attribution leaflet-control"><a href="http://leafletjs.com/" title="A JS library for interactive maps">Leaflet</a> | Map data © <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a></div></div></div></div>
+          </article>
+          <article id="column">
+            <div class="title-card-column">
+              <p>Temperatura</p>
+            </div>
+            <div id="chartTemperature">
+                
+            </div>
+          </article>
+          <article id="column">
+              <div class="title-card-column">
+                <p>Humedad</p>
+              </div>
+              <div id="chartHum">
+                  
+              </div>
+            </article>
+          <article id="columna3">
+           
+
+          </article>
+        </section>
+
+        <footer></footer>
+      </div>
+<!--
+      <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+      integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+      crossorigin=""></script>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>     
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script> 
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzN371-QG85nBDi_Eb302o3yGmPdwBbjA&callback=initMap"
+      async defer></script>
+      <script src="/assets/libs/morris.min.js"></script>
+    <script src="/socket.io/socket.io.js" charset="utf-8"></script>
+    <script src="/main.js" charset="utf-8"></script>
+  -->
+
+  </body>
+</html>
