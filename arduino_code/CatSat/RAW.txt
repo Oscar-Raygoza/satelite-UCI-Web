@@ -21,4 +21,4 @@ lat,long,alt,vel
 RSSI
         
 
-A1,temp1,hum,press,temp2,mx,my,mz,ax,ay,az,gx,gy,gz,lat,long,alt,vel,RSSI
+A1,temp1,hum,press,temp2,mx,my,mz,ax,ay,az,gx,gy,gz,lat,long,alt,vel,CO2,TVOC,RSSI
