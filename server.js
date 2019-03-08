@@ -17,7 +17,7 @@ server.listen(3000, ()=>{
 const SerialPort = require('serialport');
 const ReadLine = SerialPort.parsers.Readline;
 
-const port = new SerialPort('COM6',{
+const port = new SerialPort('COM12',{
     baudRate: 9600
 });
 
@@ -27,8 +27,8 @@ parser.on('open',function(){
     console.log('conection is opened');
 })
 
-
 /*
+
 const Props = new Array(
         "Entrada", //1
         "TemperatureDHT", //2     
@@ -54,8 +54,8 @@ const Props = new Array(
     );
 */
 
+
 function JsonOnSring(dataJson){
-    
 
 let objJson ='{ "Sensores" : [ {';
 let pivote=0, i= -1;
