@@ -10,34 +10,7 @@ body{
 }
 
 
-	#banner
-	{
-	background-color: #000;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    }
-    #map{
-        height: 100%;
-    }
-	#column
-	{
-	
-	background-color: #000;
-	width: 50%;
-	}
-	#columna3
-	{
-	background-color: #3399CC;
-	width: 50%;
-	}
 
-	.title-card-column{
-		color: #f2f2f2;
-		width: 100%;
-		height: 40px;
-		background-color: #000;
-	}
 @media screen and (max-width: 960px){
 
 	#wrapper

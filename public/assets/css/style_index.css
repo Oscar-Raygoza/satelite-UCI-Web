@@ -752,5 +752,16 @@ Sidebar
   z-index: 1;
 }
 .title-card-column{
-  background-color: red;
+  font-family: "Open Sans", sans-serif;
+  color: #f2f2f2;
+  width: 100%;
+  height: 60px;
+  border-radius: 10px;
+  background-color: #585c64;
+}
+
+.p-title-grph{
+    text-align: center;
+    padding: 10px;
+    font-size: 22pt;
 }
