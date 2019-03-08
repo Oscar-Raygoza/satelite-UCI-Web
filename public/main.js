@@ -32,6 +32,8 @@ let time = now.getDate();
 var dataGraphTemp = [],
     dataGraphHum= [],
     dataGraphGir= [],
+    dataGraphAce= [],
+    dataGraphMag= [],
     posizioni = [];
 
 let i=0;
@@ -54,11 +56,25 @@ sockets.on('data', function(data){
 
 
   
-  /**DATOS DE TEMPERATURA SOKETS */
-  dataGraphGir.push({x: i, X: dataJSON.Sensores[0][9], Y: dataJSON.Sensores[0][10], Z: dataJSON.Sensores[0][11] });
+  /**DATOS DE GIROSCOPIO SOKETS */
+  dataGraphGir.push({x: i, X: dataJSON.Sensores[0][12], Y: dataJSON.Sensores[0][13], Z: dataJSON.Sensores[0][14] });
 
   ChartGiroscopio.setData(dataGraphGir);
-  /**FIN DE DATOS TEMPERATURA */
+  /**FIN DE DATOS GIROSCOPIO */
+
+  
+  /**DATOS DE ACELEROMETRO SOKETS */
+  dataGraphAce.push({x: i, X: dataJSON.Sensores[0][9], Y: dataJSON.Sensores[0][10], Z: dataJSON.Sensores[0][11] });
+
+  ChartAcelerometro.setData(dataGraphAce);
+  /**FIN DE DATOS ACELEROMETRO */
+  
+  
+  /**DATOS DE MAGNETOMETRO SOKETS */
+  dataGraphMag.push({x: i, X: dataJSON.Sensores[0][6], Y: dataJSON.Sensores[0][7], Z: dataJSON.Sensores[0][8] });
+
+  ChartMagnetometro.setData(dataGraphMag);
+  /**FIN DE DATOS MAGNETOMETRO */
 
 
   /**DATOS DE HUMEDAD SOKETS */
@@ -103,19 +119,19 @@ var ChartHum = new Morris.Area({
   xkey: 'x',
   ykeys: ['Hum'],
   labels: [' % Humedad:'],
-  resize: false,
+  resize: true,
   lineColors: ['#44C0FF']
 });
 /* FIN SENSOR  */
 
 
 /* GIROSCOPIO SENSOR */
-var ChartGiroscopio = new Morris.Area({
+var ChartGiroscopio = new Morris.Line({
   element: 'chartGiroscopio',
   xkey: 'x',
   ykeys: ['X','Y','Z'],
   labels: ['X','Y','Z'],
-  resize: false,
+  resize: true,
   lineColors: ["#ff9421", "#931c63","red"]
 });
 
@@ -123,16 +139,29 @@ var ChartGiroscopio = new Morris.Area({
 
 
 /* ACELEROMETRO SENSOR */
-var ChartGiroscopio = new Morris.Area({
-  element: 'chartGiroscopio',
+var ChartAcelerometro = new Morris.Line({
+  element: 'chartAcelerometro',
   xkey: 'x',
   ykeys: ['X','Y','Z'],
   labels: ['X','Y','Z'],
-  resize: false,
+  resize: true,
   lineColors: ["#ff9421", "#931c63","red"]
 });
 
-/* FIN GIROSCOPIO SENSOR */
+/* FIN ACELEROMETRO SENSOR */
+
+/* MAGNETOMETRO SENSOR */
+var ChartMagnetometro = new Morris.Line({
+  element: 'chartMagneto',
+  xkey: 'x',
+  ykeys: ['X','Y','Z'],
+  labels: ['X','Y','Z'],
+  resize: true,
+  lineColors: ["#ff9421", "#931c63","red"]
+});
+
+/* FIN MAGNETOMETRO SENSOR */
+
 
 
 
