@@ -17,7 +17,7 @@ server.listen(3000, ()=>{
 const SerialPort = require('serialport');
 const ReadLine = SerialPort.parsers.Readline;
 
-const port = new SerialPort('COM12',{
+const port = new SerialPort('COM6',{
     baudRate: 9600
 });
 
