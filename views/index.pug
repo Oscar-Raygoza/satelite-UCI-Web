@@ -1,0 +1,167 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport', content='width=device-width, initial-scale=1')
+  link(href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700', rel='stylesheet', type='text/css')
+  // link href="/assets/css/style.css" type="text/css" rel="stylesheet"
+  link(rel='stylesheet', href='/assets/css/style_index.css')
+  // Resource style
+  script(src='/assets/js/modernizr.js')
+  // Modernizr
+  link(href='/assets/css/style.css', type='text/css', rel='stylesheet')
+  link(rel='stylesheet', href='/assets/libs/morris.css')
+  meta(name='viewport', content='width=device-width,user-scalable=no')
+  link(rel='stylesheet', href='https://unpkg.com/leaflet@1.4.0/dist/leaflet.css', integrity='sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==', crossorigin='')
+  title sateliteUCI
+header.cd-main-header
+  a.cd-logo(href='#0')
+    img#log-uci(src='/assets/img/logo-uci.png', alt='Logo')
+  a.cd-logo(href='#0')
+    img#log-elec(src='/assets/img/ElectronicCats.png', alt='Logo')
+  a.cd-nav-trigger(href='#0')
+    | Menu
+    span
+  nav.cd-nav
+    ul.cd-top-nav
+      li
+        a(href='#0') Abaout
+      li
+        a(href='#0') Documentation
+      li.has-children.account
+        a(href='#0')
+          | Ajustes
+        ul
+          li
+            a(href='#0') My Account
+          li
+            a(href='#0') Edit Account
+          li
+            a(href='#0') Logout
+// .cd-main-header
+main.cd-main-content
+  nav.cd-side-nav
+    ul
+      li.cd-label Main
+      li.has-children.overview
+        a(href='#0') Mapa
+        ul
+          li
+            a(href='#0') All Data
+          li
+            a(href='#0') Category 1
+          li
+            a(href='#0') Category 2
+      li.has-children.notifications.active
+        a(href='#0')
+          | Gr&aacute;ficos
+          span.count 9
+        ul
+          li
+            a(href='#0') Temperatura
+          li
+            a(href='#0') Humedad
+          li
+            a(href='#0') Presi&oacute;n
+          li
+            a(href='#0') Magnetometro
+          li
+            a(href='#0') Acelerometro
+          li
+            a(href='#0') Giroscopio
+          li
+            a(href='#0') Altura y Velocidad
+          li
+            a(href='#0') Calidad del aire
+          li
+            a(href='#0') Todo
+    ul
+      li.cd-label Secondary
+      li.has-children.bookmarks
+        a(href='#0') Bit&aacute;cora
+        ul
+          li
+            a(href='#0') All Bookmarks
+          li
+            a(href='#0') Edit Bookmark
+          li
+            a(href='#0') Import Bookmark
+      li.has-children.images
+        a(href='#0') Galeria
+        ul
+          li
+            a(href='#0') All Images
+          li
+            a(href='#0') Edit Image
+      li.has-children.users
+        a(href='#0') Creditos
+        ul
+          li
+            a(href='#0') Programacion
+    ul
+      li.cd-label RSSI
+      li.action-btn
+        a(href='#0') Signal
+  .content-wrapper
+    .container-mapa
+      #mapid.leaflet-container.leaflet-touch.leaflet-retina.leaflet-fade-anim.leaflet-grab.leaflet-touch-drag.leaflet-touch-zoom(style='width: 100%; height: 580px; position: relative;', tabindex='0')
+        .leaflet-pane.leaflet-map-pane(style='transform: translate3d(0px, 0px, 0px);')
+          .leaflet-pane.leaflet-tile-pane
+            .leaflet-layer(style='z-index: 1; opacity: 1;')
+              .leaflet-tile-container.leaflet-zoom-animated(style='z-index: 18; transform: translate3d(0px, 0px, 0px) scale(1);')
+                img.leaflet-tile.leaflet-tile-loaded(alt='', role='presentation', src='./Quick Start - Leaflet_files/2723.png', style='width: 256px; height: 256px; transform: translate3d(56px, -91px, 0px); opacity: 1;')
+                img.leaflet-tile.leaflet-tile-loaded(alt='', role='presentation', src='./Quick Start - Leaflet_files/2723(1).png', style='width: 256px; height: 256px; transform: translate3d(312px, -91px, 0px); opacity: 1;')
+                img.leaflet-tile.leaflet-tile-loaded(alt='', role='presentation', src='./Quick Start - Leaflet_files/2724.png', style='width: 256px; height: 256px; transform: translate3d(56px, 165px, 0px); opacity: 1;')
+                img.leaflet-tile.leaflet-tile-loaded(alt='', role='presentation', src='./Quick Start - Leaflet_files/2724(1).png', style='width: 256px; height: 256px; transform: translate3d(312px, 165px, 0px); opacity: 1;')
+                img.leaflet-tile.leaflet-tile-loaded(alt='', role='presentation', src='./Quick Start - Leaflet_files/2723(2).png', style='width: 256px; height: 256px; transform: translate3d(-200px, -91px, 0px); opacity: 1;')
+                img.leaflet-tile.leaflet-tile-loaded(alt='', role='presentation', src='./Quick Start - Leaflet_files/2723(3).png', style='width: 256px; height: 256px; transform: translate3d(568px, -91px, 0px); opacity: 1;')
+                img.leaflet-tile.leaflet-tile-loaded(alt='', role='presentation', src='./Quick Start - Leaflet_files/2724(2).png', style='width: 256px; height: 256px; transform: translate3d(-200px, 165px, 0px); opacity: 1;')
+                img.leaflet-tile.leaflet-tile-loaded(alt='', role='presentation', src='./Quick Start - Leaflet_files/2724(3).png', style='width: 256px; height: 256px; transform: translate3d(568px, 165px, 0px); opacity: 1;')
+          .leaflet-pane.leaflet-shadow-pane
+          .leaflet-pane.leaflet-overlay-pane
+          .leaflet-pane.leaflet-marker-pane
+          .leaflet-pane.leaflet-tooltip-pane
+          .leaflet-pane.leaflet-popup-pane
+          .leaflet-proxy.leaflet-zoom-animated(style='transform: translate3d(1.04805e+06px, 697379px, 0px) scale(4096);')
+        .leaflet-control-container
+          .leaflet-top.leaflet-left
+            .leaflet-control-zoom.leaflet-bar.leaflet-control
+              a.leaflet-control-zoom-in(href='https://leafletjs.com/examples/quick-start/example-basic.html#', title='Zoom in', role='button', aria-label='Zoom in') +
+              a.leaflet-control-zoom-out(href='https://leafletjs.com/examples/quick-start/example-basic.html#', title='Zoom out', role='button', aria-label='Zoom out') &minus;
+          .leaflet-top.leaflet-right
+          .leaflet-bottom.leaflet-left
+          .leaflet-bottom.leaflet-right
+            .leaflet-control-attribution.leaflet-control
+              a(href='http://leafletjs.com/', title='A JS library for interactive maps') Leaflet
+              |  | Map data &copy; 
+              a(href='https://www.openstreetmap.org/') OpenStreetMap
+              |  contributors, 
+              a(href='https://creativecommons.org/licenses/by-sa/2.0/') CC-BY-SA
+              | , Imagery &copy; 
+              a(href='https://www.mapbox.com/') Mapbox
+    .title-card-column
+      p.p-title-grph Humedad
+    #chartHum
+    .title-card-column
+      p.p-title-grph Temperatura
+    #chartTemperature
+    .title-card-column
+      p.p-title-grph Giroscopio
+    #chartGiroscopio
+    .title-card-column
+      p.p-title-grph Acelerometro
+    #chartAcelerometro
+    .title-card-column
+      p.p-title-grph Magnetometro
+    #chartMagneto
+  // .content-wrapper
+// .cd-main-content
+script(src='https://unpkg.com/leaflet@1.4.0/dist/leaflet.js', integrity='sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==', crossorigin='')
+script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js')
+script(src='/assets/libs/morris.min.js')
+script(src='/socket.io/socket.io.js', charset='utf-8')
+script(src='/main.js', charset='utf-8')
+script(src='/assets/js/jquery-2.1.4.js')
+script(src='/assets/js/jquery.menu-aim.js')
+script(src='/assets/js/main.js')
+// Resource jQuery
