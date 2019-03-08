@@ -1,7 +1,5 @@
 const sockets = io();
 
-
-
 /*    MAPA    */
 var map;
 function initMap() {
@@ -24,19 +22,19 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=p
 var gps = L.marker([21.857125, -102.289837]);
 mymap.addLayer(gps);
 
-/* FIN FUNCION MAPA*/ 
+/* FIN MAPA*/ 
+col1 = "red";
+col2 = "blue";
 
-/* VARIABLES LOCALES */
 var now = new Date();  
 let time = now.getDate();
 
 var dataGraphTemp = [],
     dataGraphHum= [],
+    dataGraphGir= [],
     posizioni = [];
 
 let i=0;
-
-/**FIN VARIABLES LOCALES  */
 
 
 
@@ -50,8 +48,18 @@ sockets.on('data', function(data){
 
   /**DATOS DE TEMPERATURA SOKETS */
   dataGraphTemp.push({x: i, Cen: dataJSON.Sensores[0][5], Far: ((9/5)*dataJSON.Sensores[0][5]+32)});
+
   ChartTemperature.setData(dataGraphTemp);
   /**FIN DE DATOS TEMPERATURA */
+
+
+  
+  /**DATOS DE TEMPERATURA SOKETS */
+  dataGraphGir.push({x: i, X: dataJSON.Sensores[0][9], Y: dataJSON.Sensores[0][10], Z: dataJSON.Sensores[0][11] });
+
+  ChartGiroscopio.setData(dataGraphGir);
+  /**FIN DE DATOS TEMPERATURA */
+
 
   /**DATOS DE HUMEDAD SOKETS */
   dataGraphHum.push({x: i, Hum: dataJSON.Sensores[0][3]});
@@ -84,11 +92,10 @@ var ChartTemperature = new Morris.Area({
   ykeys: ['Cen','Far'],
   labels: ['C°','F°'],
   resize: false,
-  lineColors: ['yellow', 'red']
+  lineColors: ["#ff9421", "#931c63"]
 });
 
 /* FIN TEMPERATURA SENSOR */
-
 
 /* HUMEDAD SENSOR */ 
 var ChartHum = new Morris.Area({
@@ -100,3 +107,32 @@ var ChartHum = new Morris.Area({
   lineColors: ['#44C0FF']
 });
 /* FIN SENSOR  */
+
+
+/* GIROSCOPIO SENSOR */
+var ChartGiroscopio = new Morris.Area({
+  element: 'chartGiroscopio',
+  xkey: 'x',
+  ykeys: ['X','Y','Z'],
+  labels: ['X','Y','Z'],
+  resize: false,
+  lineColors: ["#ff9421", "#931c63","red"]
+});
+
+/* FIN GIROSCOPIO SENSOR */
+
+
+/* ACELEROMETRO SENSOR */
+var ChartGiroscopio = new Morris.Area({
+  element: 'chartGiroscopio',
+  xkey: 'x',
+  ykeys: ['X','Y','Z'],
+  labels: ['X','Y','Z'],
+  resize: false,
+  lineColors: ["#ff9421", "#931c63","red"]
+});
+
+/* FIN GIROSCOPIO SENSOR */
+
+
+
