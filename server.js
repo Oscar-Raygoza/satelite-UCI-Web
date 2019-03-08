@@ -2,16 +2,20 @@ const express = require('express');
 const http = require('http');
 const socketIO = require('socket.io');
 
+const sqlite3 = require('sqlite3');
+const Sequelize = require('sequelize');
+
+
 const app = express();
 const server = http.createServer(app);
 const io = socketIO.listen(server);  
 
-
+const Routes = require('./routes/routes_node');
 app.use(express.static(__dirname + '/public'));
+app.set('view engine','pug');
 
-server.listen(3000, ()=>{
-    console.log('Server run in port ', 3000 );
-});
+app.use(Routes);
+
 
 //Serial Comunication 
 const SerialPort = require('serialport');
@@ -54,7 +58,7 @@ const Props = new Array(
     );
 */
 
-
+/**PARSEO */
 function JsonOnSring(dataJson){
 
 let objJson ='{ "Sensores" : [ {';
@@ -101,5 +105,9 @@ parser.on('data', function(data){
 port.on('error',(err)=>{
     console.log(err);
 })
+/**FIN PARSEO */
 
 
+server.listen(3000, ()=>{
+    console.log('Server run in port ', 3000 );
+});
