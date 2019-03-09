@@ -54,13 +54,13 @@ long selectBand(int);
 *    IMPORTANTE CAMBIAR id_node DEPENDIENDO TU CANSAT      *
 ************************************************************/
 
-String ID = "A1";
+String ID = "UCI";
 
 /*******************************************************  
  *Selecciona un canal entre 0 y 12 este debe coincidir *
  *con el canal de tu satelite                          *
  *******************************************************/
-int channel = 12;
+int channel = 10;
 
 String buff;
 

@@ -36,13 +36,13 @@ uint32_t selectBand(int);
      IMPORTANTE CAMBIAR id_node DEPENDIENDO TU CANSAT
 ************************************************************/
 
-String id_node = "A1";
+String id_node = "UCI";
 
 /*******************************************************
   Selecciona un canal entre 0 y 12 este debe coincidir
   con el canal de tu satelite
  *******************************************************/
-int chan = 12;
+int chan = 10;
 
 // Inicializar DHT sensor.
 DHT_Unified dht(DHTPIN, DHTTYPE);
