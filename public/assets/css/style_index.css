@@ -765,3 +765,15 @@ Sidebar
     padding: 10px;
     font-size: 22pt;
 }
+
+.colorRSSI-G{
+  background-color: #4caf50;
+}
+.colorRSSI-M{
+  background-color: #ded11c;
+}
+.colorRSSI-B{
+  background-color: #d22222;
+  color: #fff;
+  
+}

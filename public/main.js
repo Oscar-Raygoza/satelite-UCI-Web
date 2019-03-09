@@ -23,8 +23,7 @@ var gps = L.marker([21.857125, -102.289837]);
 mymap.addLayer(gps);
 
 /* FIN MAPA*/ 
-col1 = "red";
-col2 = "blue";
+
 
 var now = new Date();  
 let time = now.getDate();
@@ -38,16 +37,41 @@ var dataGraphTemp = [],
 
 let i=0;
 
-
-
+let RSSI_SOCKET;
+const elementRSSI = document.getElementById("RSSI-data");
+let colorRSSI;
 sockets.on('data', function(data){
+
+
   /**INICIO DE DATA CON SOCKETS */
   var dataJSON = JSON.parse(data);
   console.log(dataJSON);
   i++;
 /**FIN DATA SOCKETS */
 
+/** RSSI */
+  RSSI_SOCKET = dataJSON.Sensores[0][21];
+  
 
+  if(RSSI_SOCKET > -80){
+    elementRSSI.classList.add('colorRSSI-G');
+    console.log("dsa");
+  }else if(RSSI_SOCKET > -100){
+    elementRSSI.classList.add('colorRSSI-M');
+    console.log("dsa2");
+
+  }else if(RSSI_SOCKET > -110){
+    elementRSSI.classList.add('colorRSSI-B');
+    console.log("dsa3");
+
+  }else{
+    elementRSSI.classList.add('colorRSSI-B');
+    console.log("dsa4");
+
+  }
+  elementRSSI.innerHTML= RSSI_SOCKET;
+  
+  
   /**DATOS DE TEMPERATURA SOKETS */
   dataGraphTemp.push({x: i, Cen: dataJSON.Sensores[0][5], Far: ((9/5)*dataJSON.Sensores[0][5]+32)});
 
@@ -161,7 +185,5 @@ var ChartMagnetometro = new Morris.Line({
 });
 
 /* FIN MAGNETOMETRO SENSOR */
-
-
 
 
