@@ -42,7 +42,7 @@ String id_node = "UCI";
   Selecciona un canal entre 0 y 12 este debe coincidir
   con el canal de tu satelite
  *******************************************************/
-int chan = 10;
+int channel = 10;
 
 // Inicializar DHT sensor.
 DHT_Unified dht(DHTPIN, DHTTYPE);
@@ -137,7 +137,7 @@ void setup() {
   //Re-write pins CS, reset, y IRQ
   LoRa.setPins(RFM95_CS, RFM95_RST, RFM95_INT); // CS, reset, int pin
 
-  if (!LoRa.begin(selectBand(chan))) {           // initialize ratio at 915 MHz
+  if (!LoRa.begin(selectBand(channel))) {           // initialize ratio at 915 MHz
     Serial.println("LoRa init failed. Check your connections.");
     while (true);                       // if failed, do nothing
   }

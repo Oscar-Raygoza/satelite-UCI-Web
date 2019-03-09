@@ -17,7 +17,7 @@ server.listen(3000, ()=>{
 const SerialPort = require('serialport');
 const ReadLine = SerialPort.parsers.Readline;
 
-const port = new SerialPort('COM5',{
+const port = new SerialPort('COM10',{
     baudRate: 9600
 });
 
@@ -92,11 +92,13 @@ return objJson;
 
 
 parser.on('data', function(data){
-    console.log(data);
     let DATA = JsonOnSring(data);
-    io.emit('data', DATA);
-    objJson="";
-})
+    delay
+        io.emit('data', DATA);
+        objJson="";
+        console.log(data);
+
+});
 
 port.on('error',(err)=>{
     console.log(err);
