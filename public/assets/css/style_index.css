@@ -774,6 +774,44 @@ Sidebar
 }
 .colorRSSI-B{
   background-color: #d22222;
-  color: #fff;
+  color: #fff; 
+}
+
+#altura{
+  background-color: #f0720b;
+
+}#alturaAtm{
+  background-color: #af22d2;
+
+}#velocidad{
+  background-color: #1874ec;
+
+}#temperatura{
+  background-color: #2f7fe7;
+
+
+}#humedad{
+  background-color: #25bfca;
   
+
+}#presion{
+  background-color: #d28c22;
+
+
+}#tvoc{
+  background-color: #d8151573;
+
+
+}#co2{
+  background-color: #6e22d2;
+
+}#giroscopio{
+  background-color: #4b1b8a;
+
+}#acelerometro{
+  background-color: #521941;
+
+}#magnetometro{
+  background-color: #0e021d;
+
 }

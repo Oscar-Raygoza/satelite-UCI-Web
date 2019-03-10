@@ -9,6 +9,7 @@
   "author": "OscarRaygoza",
   "license": "ISC",
   "dependencies": {
+    "compression": "^1.7.3",
     "express": "^4.16.4",
     "serialport": "^7.1.4",
     "socket.io": "^2.2.0"

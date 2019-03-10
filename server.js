@@ -1,12 +1,16 @@
 const express = require('express');
 const http = require('http');
 const socketIO = require('socket.io');
+const compression = require('compression');
+
+
 
 const app = express();
 const server = http.createServer(app);
 const io = socketIO.listen(server);  
 
 
+app.use(compression());
 app.use(express.static(__dirname + '/public'));
 
 server.listen(3000, ()=>{
@@ -21,13 +25,13 @@ const port = new SerialPort('COM10',{
     baudRate: 9600
 });
 
-const parser = port.pipe(new ReadLine({ delimiter: '\n' }))
+const parser = port.pipe(new ReadLine({ delimiter: '\r\n' }))
 
 parser.on('open',function(){
     console.log('conection is opened');
 })
 
-/*
+/* # sensor
 
 const Props = new Array(
         "Entrada", //1
@@ -93,11 +97,9 @@ return objJson;
 
 parser.on('data', function(data){
     let DATA = JsonOnSring(data);
-    delay
-        io.emit('data', DATA);
-        objJson="";
-        console.log(data);
-
+    io.emit('data', DATA);
+    objJson="";
+    console.log(data);
 });
 
 port.on('error',(err)=>{
