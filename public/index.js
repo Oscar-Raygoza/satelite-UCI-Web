@@ -1,5 +1,5 @@
 const sockets = io();
-setInterval('location.reload()',50000)
+setInterval('location.reload()',80000)
 /*    MAPA    */
 var map;
 function initMap() {
@@ -33,6 +33,7 @@ var dataGraphTemp = [],
     dataGraphGir= [],
     dataGraphAce= [],
     dataGraphMag= [],
+    dataGraphCSS811= [],
     posizioni = [];
 
 let i=0;
@@ -54,6 +55,7 @@ const elementCo2 = document.getElementById("co2");
 
 /**/
 sockets.on('data', function(data){
+  i++;
 
   /**INICIO DE DATA CON SOCKETS */
   var dataJSON = JSON.parse(data);
@@ -63,22 +65,22 @@ sockets.on('data', function(data){
 
 /** RSSI */
   RSSI_SOCKET = dataJSON.Sensores[0][21];
-  
+  console.log(RSSI_SOCKET);
 
   if(RSSI_SOCKET > -80){
     elementRSSI.classList.add('colorRSSI-G');
     console.log("dsa");
-  }else if(RSSI_SOCKET > -100){
+  }else if(RSSI_SOCKET >= -100){
     elementRSSI.classList.add('colorRSSI-M');
-    console.log("dsa2");
+  
 
   }else if(RSSI_SOCKET > -110){
     elementRSSI.classList.add('colorRSSI-B');
-    console.log("dsa3");
+    
 
   }else{
     elementRSSI.classList.add('colorRSSI-B');
-    console.log("dsa4");
+  
 
   }
   elementRSSI.innerHTML= RSSI_SOCKET;
@@ -97,40 +99,46 @@ sockets.on('data', function(data){
   /**/
 
   /**DATOS DE TEMPERATURA SOKETS */
-  dataGraphTemp.push({x: 0, Cen: dataJSON.Sensores[0][5], Far: ((9/5)*dataJSON.Sensores[0][5]+32)});
+  dataGraphTemp.push({x: i, Cen: dataJSON.Sensores[0][5], Far: ((9/5)*dataJSON.Sensores[0][5]+32)});
 
   ChartTemperature.setData(dataGraphTemp);
   /**FIN DE DATOS TEMPERATURA */
 
 
+
   
   /**DATOS DE GIROSCOPIO SOKETS */
-  dataGraphGir.push({x: 0, X: dataJSON.Sensores[0][12], Y: dataJSON.Sensores[0][13], Z: dataJSON.Sensores[0][14] });
+  dataGraphGir.push({x: i, X: dataJSON.Sensores[0][12], Y: dataJSON.Sensores[0][13], Z: dataJSON.Sensores[0][14] });
 
   ChartGiroscopio.setData(dataGraphGir);
   /**FIN DE DATOS GIROSCOPIO */
 
   
   /**DATOS DE ACELEROMETRO SOKETS */
-  dataGraphAce.push({x: 0, X: dataJSON.Sensores[0][9], Y: dataJSON.Sensores[0][10], Z: dataJSON.Sensores[0][11] });
+  dataGraphAce.push({x: i, X: dataJSON.Sensores[0][9], Y: dataJSON.Sensores[0][10], Z: dataJSON.Sensores[0][11] });
 
   ChartAcelerometro.setData(dataGraphAce);
   /**FIN DE DATOS ACELEROMETRO */
   
   
   /**DATOS DE MAGNETOMETRO SOKETS */
-  dataGraphMag.push({x: 0, X: dataJSON.Sensores[0][6], Y: dataJSON.Sensores[0][7], Z: dataJSON.Sensores[0][8] });
+  dataGraphMag.push({x: i, X: dataJSON.Sensores[0][6], Y: dataJSON.Sensores[0][7], Z: dataJSON.Sensores[0][8] });
 
   ChartMagnetometro.setData(dataGraphMag);
   /**FIN DE DATOS MAGNETOMETRO */
 
 
   /**DATOS DE HUMEDAD SOKETS */
-  dataGraphHum.push({x: 0, Hum: dataJSON.Sensores[0][3]});
+  dataGraphHum.push({x: i, Hum: dataJSON.Sensores[0][3]});
   ChartHum.setData(dataGraphHum);
   /**FIN DE DATOS HUMEDAD */
   
-  
+  /**DATOS DE TEMPERATURA SOKETS */
+  dataGraphCSS811.push({x: i, CO2: dataJSON.Sensores[0][19], TVOC:dataJSON.Sensores[0][20]});
+
+  ChartCSS811.setData(dataGraphCSS811);
+  /**FIN DE DATOS TEMPERATURA */
+
   
 
   /* MAPA SOCKET */
@@ -209,5 +217,21 @@ var ChartMagnetometro = new Morris.Line({
 });
 
 /* FIN MAGNETOMETRO SENSOR */
+
+
+/* CCS811 SENSOR */
+
+
+var ChartCSS811 = new Morris.Area({
+  element: 'chartCO2&TVOC',
+  xkey: 'x',
+  ykeys: ['CO2','TVOC'],
+  labels: ['CO2','TVOC'],
+  resize: false,
+  lineColors: ["#ff9421", "#931c63"]
+});
+
+/* FIN CCS811 SENSOR */
+
 
 

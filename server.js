@@ -2,13 +2,15 @@ const express = require('express');
 const http = require('http');
 const socketIO = require('socket.io');
 const compression = require('compression');
-
+const fs = require('fs');
+const readLine= require("readline");
 
 
 const app = express();
 const server = http.createServer(app);
 const io = socketIO.listen(server);  
 
+let log;
 
 app.use(compression());
 app.use(express.static(__dirname + '/public'));
@@ -21,7 +23,7 @@ server.listen(3000, ()=>{
 const SerialPort = require('serialport');
 const ReadLine = SerialPort.parsers.Readline;
 
-const port = new SerialPort('COM10',{
+const port = new SerialPort('COM6',{
     baudRate: 9600
 });
 
@@ -71,7 +73,7 @@ while(pivote >= 0){
     pivote = dataJson.indexOf(",",i+1);
     if(pivote == -1){
         flag = true;
-        value = dataJson.substring(i+1, dataJson.length-1);
+        value = dataJson.substring(i+1, dataJson.length);
     }
         
     if(!flag)
@@ -94,12 +96,21 @@ objJson += '"TEST": "ON" } ]}';
 return objJson;
 }
 
+let timeDate = "init";
 
 parser.on('data', function(data){
+    let date = new Date();
+    
     let DATA = JsonOnSring(data);
+    log =data + "\n";
+    fs.appendFile("./log.txt", log + timeDate + ":   ", function(error) {
+        if(error) throw error; // Handle the error just in case
+    }); 
     io.emit('data', DATA);
     objJson="";
     console.log(data);
+    timeDate = date.getDate()+ "/" + date.getMonth()+ "/" + date.getFullYear()+" , hr:"+date.getHours()+ " nin: "+date.getMinutes()+ " sec: "+date.getSeconds();
+
 });
 
 port.on('error',(err)=>{
