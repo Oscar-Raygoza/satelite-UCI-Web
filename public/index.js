@@ -86,8 +86,8 @@ sockets.on('data', function(data){
   elementRSSI.innerHTML= RSSI_SOCKET;
   
   /**DATOS FRONT SOCKETS */
-  elementAltura.innerHTML =  dataJSON.Sensores[0][17];
-  elementAlturaAtm.innerHTML =  dataJSON.Sensores[0][17];
+  elementAltura.innerHTML =  dataJSON.Sensores[0][17]+ " 7  m";
+  elementAlturaAtm.innerHTML =  dataJSON.Sensores[0][17] +" m";
   elementVelocidad.innerHTML =  dataJSON.Sensores[0][18] + " kn";
   elementTemperatura.innerHTML =  dataJSON.Sensores[0][5]+ " °C"; 
   elementHumedad.innerHTML =  dataJSON.Sensores[0][3] +" %"; 

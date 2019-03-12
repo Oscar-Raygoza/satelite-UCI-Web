@@ -1,4 +1,4 @@
-/************************************************************
+ /************************************************************
 SPANISH
 GroundStation.ino
 GroundStation - Estacion Terrena para CatSat
@@ -101,7 +101,9 @@ void loop()
     }
     buff+=",";
     buff+=String(LoRa.packetRssi());
-    Serial.println(buff);
+    if(buff.startsWith(ID)){
+       Serial.println(buff);
+      }
 
     buff="";
     digitalWrite(LED_BUILTIN,LOW);
